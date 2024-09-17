@@ -164,25 +164,38 @@ const handleOnMove = e => {
     { duration: 1200, fill: "forwards" });
   }
 };
-<footer>
-								<div class="pagination">
-									<a href="https://minhazuddin23.github.io/Minhazuddin.github.io/generic.html" class="previous">Prev</a>
-									<a href="https://minhazuddin23.github.io/Minhazuddin.github.io/cool.html" class="page active"></a>
-									
-						
-									<a href="https://minhazuddin23.github.io/Minhazuddin.github.io/index.html" class="Home">Next</a>
-	.pagination a {
-    font-size: 20px; /* Adjust the size as needed */
-    color: white; /* Set text color to white */
-    text-decoration: none; /* Remove underline */
-}
 
-.pagination a:hover {
-    color: #ddd; /* Optional: Change color when hovering */
-}
+/* -- Had to add extra lines for touch events -- */
 
-								</div>
-							</footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <style>
+        .pagination a {
+            font-size: 20px; /* Adjust the size as needed */
+            color: white; /* Set text color to white */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .pagination a:hover {
+            color: #ddd; /* Optional: Change color when hovering */
+        }
+    </style>
+</head>
+<body>
+    <!-- Your page content goes here -->
+
+    <footer>
+        <div class="pagination">
+            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/generic.html" class="previous">Prev</a>
+            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/cool.html" class="page active"></a>
+            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/index.html" class="home">Next</a>
+        </div>
+    </footer>
+</body>
+</html>
+
 
 
 	      
