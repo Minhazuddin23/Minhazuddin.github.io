@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>My Blog - Tech News</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Styling for live date and time */
+        #datetime {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            font-size: 24px;
+            color: hsl(0, 95%, 50%);
+            text-align: center;
+            margin: 20px 0;
+        }
+        /* Image container styling */
+        .image-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 400px;
+            height: auto;
+        }
+        /* News articles styling */
+        .news-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .news-article {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .news-article h2 {
+            margin: 0 0 10px;
+        }
+        .news-article p {
+            color: #555;
+        }
+        .news-article a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .news-article a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Blog Posts</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Minhaz Uddin</a></li>
+                <li class="active"><a href="generic.html">Blog</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/profile.php?id=100011039798829" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/minhaz_uddin3/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/in/minhaz-uddin-789521219" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main">
+            <!-- Live Date and Time -->
+            <div id="datetime"></div>
+
+            <!-- Welcome Message -->
+            <section class="post">
+                <header class="major">
+                    <h1>Welcome to my blog!</h1>
+                    <p>Here, I share insights into technology, pictures, and everyday life experiences.</p>
+                </header>
+
+                <!-- Image Section -->
+                <div class="image-container"> 
+				
+		
+				
+				
+					Hello and welcome! I’m Minhaz Uddin, a proud Bangladeshi currently residing in Upper Darby, PA. This blog serves as a platform for me to share my journey, daily life, and personal reflections. Join me as I explore and connect through my experiences and insights.
+				
+					<div class="image main"><img src="images/k2we.jpeg" alt="Tech Image 1" /></div>
+					<div class="image main"><img src="images/wer.jpeg" alt="Tech Image 2" /></div>
+					<div class="image main"><img src="images/gty.jpeg" alt="Tech Image 3" /></div>
+					
+				</div>
+				
+
+                <!-- Tech News Section -->
+                <div class="news-container">
+                    <h1>Top Tech News</h1>
+
+                    <div class="news-article">
+                        <h2>Apple Unveils Latest iPhone Model</h2>
+                        <p>Apple shares slide as analysts highlight sluggish iPhone 16 demand...</p>
+                        <a href="https://www.cnbc.com/2024/09/16/apple-shares-slide-on-lower-than-expected-iphone-16-demand-analysts.html" target="_blank">Read More</a>
+                    </div>
+
+                    <div class="news-article">
+                        <h2>Google Announces New AI Technology</h2>
+                        <p>News publishers sound alarm on Google’s new AI-infused search, warn of ‘catastrophic’ impacts...</p>
+                        <a href="https://www.cnn.com/2024/05/15/media/google-gemini-ai-search-news-outlet-impact/index.html" target="_blank">Read More</a>
+                    </div>
+
+                    <div class="news-article">
+                        <h2>Electric Cars: The Future of Transportation</h2>
+                        <p>The Electric Vehicle Future Is Coming. Just a Little More Slowly...</p>
+                        <a href="https://www.nytimes.com/2024/09/05/climate/electric-vehicle-sales-projections.html" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h3>Social</h3>
+                <ul class="icons alt">
+                    <li><a href="https://www.facebook.com/profile.php?id=100011039798829" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://www.instagram.com/minhaz_uddin3/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/minhaz-uddin-789521219" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul><li>&copy; Minhaz Uddin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            document.getElementById('datetime').innerHTML = dateTimeString;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</body>
+</html>
