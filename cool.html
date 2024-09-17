@@ -1,209 +1,195 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-	<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">MINHAZ UDDIN</a></li>
-							<li><a href="generic.html">Blog</a></li>
-							<li><a href="cool.html">Cool Images</a></li>
-							
-						</ul>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhaz Uddin's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+        }
 
-    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+        #header {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+        }
 
-    <meta name="apple-mobile-web-app-title" content="CodePen">
+        #header .logo {
+            font-size: 2em;
+            color: #fff;
+            text-decoration: none;
+        }
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+        #nav {
+            background: #333;
+            padding: 10px;
+        }
 
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+        #nav .links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
+        #nav .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
 
+        #nav .icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-  
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+        #nav .icons a {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
 
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            user-select: none;
+        }
 
-  <title>CodePen - Sliding Image Track</title>
+        #image-track>.image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+        }
 
-    <link rel="canonical" href="https://codepen.io/Hyperplexed/pen/MWXBRBp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik&display=swap" rel="stylesheet">
-  
-  
-  
-<style>
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  margin: 0rem;
-  overflow: hidden;
-}
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: #222;
+            padding: 10px;
+        }
 
-#image-track {
-  display: flex;
-  gap: 4vmin;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(0%, -50%); 
-  user-select: none; /* -- Prevent image highlighting -- */
-}
+        footer .pagination a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
 
-#image-track > .image {
-  width: 40vmin;
-  height: 56vmin;
-  object-fit: cover;
-  object-position: 100% center;
-}
-
-/* -- YouTube Link Styles -- */
-
-body.menu-toggled > .meta-link > span {
-  color: rgb(30, 30, 30);
-}
-
-#source-link {
-  bottom: 60px;
-}
-
-#source-link > i {
-  color: rgb(94, 106, 210);
-}
-
-#yt-link > i {
-  color: rgb(239, 83, 80);
-}
-
-.meta-link {
-  align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  bottom: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;  
-  display: inline-flex;
-  gap: 5px;
-  left: 10px;
-  padding: 10px 20px;
-  position: fixed;
-  text-decoration: none;
-  transition: background-color 400ms, border-color 400ms;
-  z-index: 10000;
-}
-
-.meta-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.meta-link > i, .meta-link > span {
-  height: 20px;
-  line-height: 20px;
-}
-
-.meta-link > span {
-  color: white;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-}
-</style>
-
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
-  
-  
+        footer .pagination .active {
+            font-weight: bold;
+            color: #94caea;
+        }
+    </style>
 </head>
 
-<body translate="no">
-  <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-  <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80" draggable="false" />
-  <img class="image" src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" draggable="false" />
-</div>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">Minhaz Uddin</a>
+    </header>
 
- 
+    <!-- Navigation -->
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="generic.html">Blog</a></li>
+            <li><a href="cool.html">Cool Images</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="https://www.facebook.com/profile.php?id=100011039798829" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="https://www.instagram.com/minhaz_uddin3/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="https://www.linkedin.com/in/minhaz-uddin-789521219" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        </ul>
+    </nav>
 
-</a>
-  <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
-      <script id="rendered-js" >
-const track = document.getElementById("image-track");
+    <!-- Image Slider -->
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1674&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1759&q=80" draggable="false" />
+        <img class="image" src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" draggable="false" />
+    </div>
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
-
-const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";
-  track.dataset.prevPercentage = track.dataset.percentage;
-};
-
-const handleOnMove = e => {
-  if (track.dataset.mouseDownAt === "0") return;
-
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-  maxDelta = window.innerWidth / 2;
-
-  const percentage = mouseDelta / maxDelta * -100,
-  nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-  nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-
-  track.dataset.percentage = nextPercentage;
-
-  track.animate({
-    transform: `translate(${nextPercentage}%, -50%)` },
-  { duration: 1200, fill: "forwards" });
-
-  for (const image of track.getElementsByClassName("image")) {
-    image.animate({
-      objectPosition: `${100 + nextPercentage}% center` },
-    { duration: 1200, fill: "forwards" });
-  }
-};
-
-/* -- Had to add extra lines for touch events -- */
-
-
+    <!-- Footer -->
     <footer>
         <div class="pagination">
-            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/generic.html" class="previous">Prev</a>
-            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/cool.html" class="page active"></a>
-            <a href="https://minhazuddin23.github.io/Minhazuddin.github.io/index.html" class="home">Next</a>
+            <a href="generic.html" class="previous">Prev</a>
+            <a href="cool.html" class="page active">Images</a>
+            <a href="index.html" class="home">Next</a>
         </div>
     </footer>
+
+    <script>
+        const track = document.getElementById("image-track");
+
+        const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+        const handleOnUp = () => {
+            track.dataset.mouseDownAt = "0";
+            track.dataset.prevPercentage = track.dataset.percentage;
+        };
+
+        const handleOnMove = e => {
+            if (track.dataset.mouseDownAt === "0") return;
+
+            const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                maxDelta = window.innerWidth / 2;
+
+            const percentage = mouseDelta / maxDelta * -100,
+                nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
+            track.dataset.percentage = nextPercentage;
+
+            track.animate({
+                transform: `translate(${nextPercentage}%, -50%)`
+            }, { duration: 1200, fill: "forwards" });
+
+            for (const image of track.getElementsByClassName("image")) {
+                image.animate({
+                    objectPosition: `${100 + nextPercentage}% center`
+                }, { duration: 1200, fill: "forwards" });
+            }
+        };
+
+        window.onmousedown = e => handleOnDown(e);
+        window.ontouchstart = e => handleOnDown(e.touches[0]);
+        window.onmouseup = e => handleOnUp(e);
+        window.ontouchend = e => handleOnUp(e.touches[0]);
+        window.onmousemove = e => handleOnMove(e);
+        window.ontouchmove = e => handleOnMove(e.touches[0]);
+    </script>
 </body>
+
 </html>
 
-
-
-	      
-
-/* -- Had to add extra lines for touch events -- */
-
-window.onmousedown = e => handleOnDown(e);
-
-window.ontouchstart = e => handleOnDown(e.touches[0]);
-
-window.onmouseup = e => handleOnUp(e);
-
-window.ontouchend = e => handleOnUp(e.touches[0]);
-
-window.onmousemove = e => handleOnMove(e);
-
-window.ontouchmove = e => handleOnMove(e.touches[0]);
-//# sourceURL=pen.js
-    </script>
 
   
 </body>
